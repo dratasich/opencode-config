@@ -1,0 +1,56 @@
+// https://opencode.ai/docs/config/
+{
+  "$schema": "https://opencode.ai/config.json",
+  // though .env and .gitignore are considered
+  // (https://github.com/anomalyco/opencode/commit/4c2e888709fde5aa870d426cf272c6d00495d5b5)
+  // (https://github.com/anomalyco/opencode/issues/4969)
+  // disallow everything by default, select agent for specific permissions
+  "permission": {
+    "*": "ask",
+    "read": {
+      "~": "deny",
+      "/**": "deny",
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*secret*": "deny",
+      "secrets/**": "deny",
+      "credentials/**": "deny",
+      // no read on certificates by default
+      "*.pem": "deny",
+      "*.key": "deny",
+      "*.crt": "deny",
+      "*.p12": "deny",
+    },
+    "edit": {
+      "*": "deny",
+    },
+    "bash": {
+      "git *": "ask",
+      "git status": "allow",
+      "git diff": "allow",
+      "git merge": "deny",
+      "git revert": "deny",
+      "git reset": "deny",
+      "git rebase": "deny",
+      "rm": "deny",
+      // in case i want to use openspec sometime :)
+      "openspec archive --yes --skip-specs": "deny",
+    }
+  },
+  // do not allow scanning at all
+  "watcher": {
+    "ignore": [
+      // secrets
+      "*.env*",
+      "secrets/**",
+      "credentials/**",
+      // other
+      ".git",
+    ]
+  },
+  "instructions": [
+    "README.md",
+    "CONTRIBUTING.md",
+  ],
+}
