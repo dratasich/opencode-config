@@ -1,8 +1,9 @@
 # secret files
 *secret*
+**/*secret*
 
 # Environments
 .env
-**/.env.secret*
+.env*
 .envrc
 .venv

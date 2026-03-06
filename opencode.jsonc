@@ -6,27 +6,31 @@
   // (https://github.com/anomalyco/opencode/issues/4969)
   // disallow everything by default, select agent for specific permissions
   "permission": {
-    "*": "ask",
     "read": {
+      // outside of project
       "~": "deny",
-      "/**": "deny",
-      "*": "allow",
-      "*.env": "deny",
-      "*.env.*": "deny",
+      "/*": "deny", // this does not catch all (!)
+      // secrets
+      "*.env*": "deny",
       "*secret*": "deny",
+      "*token*": "deny",
+      "*password*": "deny",
       "secrets/**": "deny",
       "credentials/**": "deny",
-      // no read on certificates by default
+      // certificates
       "*.pem": "deny",
       "*.key": "deny",
       "*.crt": "deny",
       "*.p12": "deny",
-    },
-    "edit": {
-      "*": "deny",
+      "*.keystore": "deny",
+      "*.jks": "deny",
+      // other
+      ".git": "deny",
     },
     "bash": {
-      "git *": "ask",
+      // be careful as the agent can request for any command (!)
+      "*": "ask",
+      "ls -la": "allow",
       "git status": "allow",
       "git diff": "allow",
       "git merge": "deny",
@@ -39,18 +43,11 @@
     }
   },
   // do not allow scanning at all
-  "watcher": {
-    "ignore": [
-      // secrets
-      "*.env*",
-      "secrets/**",
-      "credentials/**",
-      // other
-      ".git",
-    ]
-  },
+  // see watcher, however this is experimental
   "instructions": [
+    // typically available in the projects
     "README.md",
     "CONTRIBUTING.md",
+    // "AGENTS.md", // automatically loaded by agents in projects
   ],
 }
