@@ -1,0 +1,8 @@
+# secret files
+*secret*
+
+# Environments
+.env
+**/.env.secret*
+.envrc
+.venv
