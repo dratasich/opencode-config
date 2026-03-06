@@ -7,9 +7,12 @@
   // disallow everything by default, select agent for specific permissions
   "permission": {
     "read": {
+      // order matters (!)
       // outside of project
       "~": "deny",
-      "/*": "deny", // this does not catch all (!)
+      "/*": "deny", // this seems to catch all
+      // inside the project
+      "*": "allow",
       // secrets
       "*.env*": "deny",
       "*secret*": "deny",
@@ -38,6 +41,7 @@
       "git reset": "deny",
       "git rebase": "deny",
       "rm": "deny",
+      "uv tool *": "deny",
       // in case i want to use openspec sometime :)
       "openspec archive --yes --skip-specs": "deny",
     }
