@@ -33,14 +33,18 @@
     "bash": {
       // be careful as the agent can request for any command (!)
       "*": "ask",
-      "ls -la": "allow",
+      "find *": "allow",
+      "ls *": "allow",
+      "rm": "deny",
+      // git
       "git status": "allow",
       "git diff": "allow",
       "git merge": "deny",
       "git revert": "deny",
       "git reset": "deny",
       "git rebase": "deny",
-      "rm": "deny",
+      // python stuff
+      "uv run pytest": "allow",
       "uv tool *": "deny",
       // in case i want to use openspec sometime :)
       "openspec archive --yes --skip-specs": "deny",
