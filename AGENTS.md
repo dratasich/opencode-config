@@ -40,6 +40,8 @@ blacklist:
 - NEVER: Run database migrations automatically.
 - NEVER: Modify the lock-files.
 - ONLY: Make changes within the source directory.
+- ASK FIRST: `cd` with absolute paths (should not be necessary when staying in directory anyway).
+- ALWAYS: Consider `**/*.md` in the working directory - these will contain background info, guidelines and specs.
 
 ## TDD Only
 
