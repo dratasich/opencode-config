@@ -53,6 +53,9 @@
   },
   // do not allow scanning at all
   // see watcher, however this is experimental
+  // use a lightweight cloud model for title generation to avoid the local model
+  // being called simultaneously for two sessions (causes stalling, issue #33126)
+  "small_model": "opencode/gpt-5-nano",
   "instructions": [
     // typically available in the projects
     "README.md",
