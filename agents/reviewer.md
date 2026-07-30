@@ -26,7 +26,10 @@ In addition, if any:
 
 - Run tests and pre-commit.
 - State security concerns.
-- Check if this code is maintainable and readable.
+- Check if this code is maintainable and readable. Follow best practices:
+  - SOLID
+  - DRY
+  - KISS
 
 # How to Respond
 

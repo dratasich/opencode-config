@@ -24,7 +24,8 @@ Got some starting point from:
 
 | Agent    | Description                                                                 |
 | :------- | :-------------------------------------------------------------------------- |
-| reviewer | Guidelines for reviewing and how the agent should style/write the response. |
+| researcher | Researches dev and devops topics. Read-only; no write/edit access. |
+| reviewer   | Guidelines for reviewing and how the agent should style/write the response. |
 
 ## Additional Tools
 
