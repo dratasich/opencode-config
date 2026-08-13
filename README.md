@@ -25,3 +25,22 @@ Got some starting point from:
 | Agent    | Description                                                                 |
 | :------- | :-------------------------------------------------------------------------- |
 | reviewer | Guidelines for reviewing and how the agent should style/write the response. |
+
+## Additional Tools
+
+Install skills:
+
+```bash
+npx skills add https://github.com/juliusbrussee/caveman
+```
+
+- [caveman - agent skill to reduce tokens](https://github.com/juliusbrussee/caveman)
+- [rtk - cli proxy to reduce token consumption](https://github.com/rtk-ai/rtk)
+- [babysitter - enforce your workflow](https://github.com/a5c-ai/babysitter)
+- [openspec - SDD](https://github.com/Fission-AI/OpenSpec)
+
+## Connect to other providers
+
+On my AMD GPU it was easiest to run the models with
+[llama.cpp](https://llama-cpp.com/) with vulkan (see AUR for latest)
+(Ollama didn't detect my GPU and I didn't want to bother installing/struggling with ROCm).
