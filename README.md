@@ -18,7 +18,7 @@ Got some starting point from:
 
 - Agents should not be trusted -> setup permissions over opencode-defaults
   (e.g., no scan/read/write for files outside of the cwd).
-- Agents need guidelines -> AGENT.md files.
+- Agents need guidelines -> `AGENTS.md` files.
 
 ## Agents
 
@@ -29,16 +29,27 @@ Got some starting point from:
 
 ## Additional Tools
 
-Install skills:
+Install skills (or copy from repo to skills folder):
 
 ```bash
 npx skills add https://github.com/juliusbrussee/caveman
+
+# examples
+npx skills find uv
 ```
 
 - [caveman - agent skill to reduce tokens](https://github.com/juliusbrussee/caveman)
 - [rtk - cli proxy to reduce token consumption](https://github.com/rtk-ai/rtk)
 - [babysitter - enforce your workflow](https://github.com/a5c-ai/babysitter)
 - [openspec - SDD](https://github.com/Fission-AI/OpenSpec)
+
+## Plugins
+
+Install plugins from the command line:
+
+```bash
+opencode plugin opencode-vim@latest --global
+```
 
 ## Connect to other providers
 
