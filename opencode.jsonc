@@ -20,7 +20,8 @@
       "*password*": "deny",
       "secrets/**": "deny",
       "credentials/**": "deny",
-      // certificates
+      // certificates and keys
+      "id*": "deny",
       "*.pem": "deny",
       "*.key": "deny",
       "*.crt": "deny",
@@ -35,6 +36,9 @@
       "*": "ask",
       "find *": "allow",
       "ls *": "allow",
+      "head *": "allow",
+      "tail *": "allow",
+      "echo *": "allow",
       "grep *": "allow",
       "rm": "deny",
       // git

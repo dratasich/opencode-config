@@ -68,3 +68,7 @@ Keep it stupid simple. Do not over-engineer.
 # Guidelines
 
 - Follow the project's README or CONTRIBUTING guidelines.
+- Prefer to create files in the source directory, unless otherwise specified.
+  You may create a `tmp` folder.
+  Avoid using `/tmp`, `/var/tmp` or `/opt`, global OS directories in general.
+- Prefer `podman` in favor of `docker` for containerization.
