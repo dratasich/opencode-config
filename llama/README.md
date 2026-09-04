@@ -12,6 +12,14 @@ hf download Qwen/Qwen3-8B-GGUF --include Qwen3-8B-Q4_K_M.gguf --local-dir ~/mode
 llama serve -m ~/models/Qwen3-8B-Q4_K_M.gguf --alias qwen3-8b -ngl 99 -c 32768 -fa on -ctk q8_0 -ctv q8_0 --jinja --host 127.0.0.1 --port 12345
 ```
 
+Or use the wrapper script (aliases match the model keys in `opencode.jsonc`):
+
+```bash
+./serve.sh qwen3-8b              # fast default
+./serve.sh devstral-small-2-2512 # stronger agentic coding, slower
+./serve.sh                       # list aliases
+```
+
 Extend `opencode.jsonc`.
 
 ## Tool calling
