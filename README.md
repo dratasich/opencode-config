@@ -1,5 +1,9 @@
 # opencode-config
 
+> [!IMPORTANT]
+> Archived. This config moved to [dratasich/dotfiles](https://github.com/dratasich/dotfiles).
+> (chezmoi source: `dot_config/<tool>`)
+
 My personal opencode-config.
 
 > [!CAUTION]
